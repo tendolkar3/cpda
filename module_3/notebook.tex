@@ -310,41 +310,51 @@ the code. Understand the idea.
 {\color{incolor}In [{\color{incolor}205}]:} \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{exp}
           \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
           
-          \PY{c+c1}{\PYZsh{} First we will write a function that takes in a x,y coordinate on a map and returns the height of that point}
-          \PY{c+c1}{\PYZsh{} This is a function that draws 3 small hills in a square region going from 0,0 to 10,10}
+          \PY{c+c1}{\PYZsh{} First we will write a function that takes }
+          \PY{c+c1}{\PYZsh{} in a x,y coordinate on a map and returns the height of that point}
+          \PY{c+c1}{\PYZsh{} This is a function that draws 3 small hills }
+          \PY{c+c1}{\PYZsh{} in a square region going from 0,0 to 10,10}
           \PY{n+nd}{@np}\PY{o}{.}\PY{n}{vectorize}
           \PY{k}{def} \PY{n+nf}{height}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
-              \PY{k}{return} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{9}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}
-                               \PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{9}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}
-                                                          \PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{7}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}
-                                                                                     \PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+              \PY{k}{return} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}
+                  \PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{9}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{9}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}
+                  \PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{exp}\PY{p}{(}
+                  \PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{7}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{p}{(}\PY{p}{(}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
           
-          \PY{c+c1}{\PYZsh{} Then we write a function that takes current x,y and previous x,y and calculates the height gained}
+          \PY{c+c1}{\PYZsh{} Then we write a function that takes current x,y }
+          \PY{c+c1}{\PYZsh{} and previous x,y and calculates the height gained}
           \PY{c+c1}{\PYZsh{} If the height reduces, it returns 0}
-          \PY{c+c1}{\PYZsh{} This is a good cost function since, more the height increase, more the fuel consumption}
+          \PY{c+c1}{\PYZsh{} This is a good cost function since, more the height }
+          \PY{c+c1}{\PYZsh{} increase, more the fuel consumption}
           \PY{c+c1}{\PYZsh{} but going down the slope takes 0 fuel}
           \PY{k}{def} \PY{n+nf}{cost}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{x\PYZus{}prev}\PY{p}{,}\PY{n}{y\PYZus{}prev}\PY{p}{)}\PY{p}{:}
               \PY{n}{c} \PY{o}{=} \PY{n}{height}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{height}\PY{p}{(}\PY{n}{x\PYZus{}prev}\PY{p}{,}\PY{n}{y\PYZus{}prev}\PY{p}{)}
               \PY{k}{return} \PY{n}{c} \PY{k}{if} \PY{n}{c}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0} \PY{k}{else} \PY{l+m+mi}{0}
           
-          \PY{c+c1}{\PYZsh{} This is the main function that calculates the minimum cost as well as the optimal path to reach given x,y}
+          \PY{c+c1}{\PYZsh{} This is the main function that calculates the }
+          \PY{c+c1}{\PYZsh{} minimum cost as well as the optimal path to reach given x,y}
           \PY{k}{def} \PY{n+nf}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
-              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial and takes 0 fuel and optimal path is [[0,0]]}
+              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial }
+              \PY{c+c1}{\PYZsh{} and takes 0 fuel and optimal path is [[0,0]]}
               \PY{c+c1}{\PYZsh{} Just do not drive}
               \PY{k}{if} \PY{p}{(}\PY{n}{x}\PY{o}{==}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
                   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{,} \PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}
               \PY{k}{else}\PY{p}{:}
                   \PY{c+c1}{\PYZsh{} But if both not 0...we have following cases}
                   \PY{k}{if} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
-                      \PY{c+c1}{\PYZsh{} If both greater than 0, what are the points, from which a person can reach x,y?}
-                      \PY{c+c1}{\PYZsh{} Ans \PYZhy{} since person can move only up or right, only points that can reach x,y are}
+                      \PY{c+c1}{\PYZsh{} If both greater than 0, what are the points, }
+                      \PY{c+c1}{\PYZsh{} from which a person can reach x,y?}
+                      \PY{c+c1}{\PYZsh{} Ans \PYZhy{} since person can move only up or right, }
+                      \PY{c+c1}{\PYZsh{} only points that can reach x,y are}
                       \PY{c+c1}{\PYZsh{} (x\PYZhy{}1,y) and (x,y\PYZhy{}1)}
                       \PY{c+c1}{\PYZsh{} so we first calculate cost of approaching left point (x\PYZhy{}1,y)}
                       \PY{n}{cost\PYZus{}from\PYZus{}left} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{y}\PY{p}{)}
                       \PY{c+c1}{\PYZsh{} Then we calculate cost of approaching bottom point (x,y\PYZhy{}1)}
                       \PY{n}{cost\PYZus{}from\PYZus{}below} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-                      \PY{c+c1}{\PYZsh{} cost1 = cost of approaching left point (x\PYZhy{}1,y) + cost of going from (x\PYZhy{}1,y) to (x,y)}
-                      \PY{c+c1}{\PYZsh{} cost2 = cost of approaching bottom point (x,y\PYZhy{}1) + cost of going from (x,y\PYZhy{}1) to (x,y)}
+                      \PY{c+c1}{\PYZsh{} cost1 = cost of approaching left point (x\PYZhy{}1,y) }
+                      \PY{c+c1}{\PYZsh{} + cost of going from (x\PYZhy{}1,y) to (x,y)}
+                      \PY{c+c1}{\PYZsh{} cost2 = cost of approaching bottom point (x,y\PYZhy{}1) }
+                      \PY{c+c1}{\PYZsh{} + cost of going from (x,y\PYZhy{}1) to (x,y)}
                       \PY{c+c1}{\PYZsh{} return the minimum cost1 and cost2 as cost to approach (x,y)}
                       
                       \PY{c+c1}{\PYZsh{} cost of approaching left point (x\PYZhy{}1,y) is calculated by }
@@ -374,13 +384,15 @@ the code. Understand the idea.
           \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{path\PYZus{}tenten}\PY{p}{:}
               \PY{n}{path\PYZus{}string} \PY{o}{+}\PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{, }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)\PYZhy{}\PYZhy{}\PYZgt{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{n}{path\PYZus{}string}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{]}
-          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 10,10 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost\PYZus{}tenten}\PY{p}{,} \PY{n}{path\PYZus{}string}\PY{p}{)}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 10,10 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost\PYZus{}tenten}\PY{p}{,} \PY{n}{path\PYZus{}string}\PY{p}{)}\PY{p}{)}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
           \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{path\PYZus{}foureight}\PY{p}{:}
               \PY{n}{path\PYZus{}string} \PY{o}{+}\PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{, }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)\PYZhy{}\PYZhy{}\PYZgt{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{n}{path\PYZus{}string}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{]}
-          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 4,8 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost\PYZus{}foureight}\PY{p}{,} \PY{n}{path\PYZus{}string}\PY{p}{)}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 4,8 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
+                \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost\PYZus{}foureight}\PY{p}{,} \PY{n}{path\PYZus{}string}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -396,7 +408,8 @@ Minimum cost to reach 4,8 = 29.38051878887093
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}206}]:} \PY{c+c1}{\PYZsh{} Lets visualize it via plots}
-          \PY{c+c1}{\PYZsh{} You can ignore the code and focus on plot and get an intuitive feel}
+          \PY{c+c1}{\PYZsh{} You can ignore the code and focus on }
+          \PY{c+c1}{\PYZsh{} plot and get an intuitive feel}
           
           \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -404,8 +417,10 @@ Minimum cost to reach 4,8 = 29.38051878887093
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yticks}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
           \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{path\PYZus{}tenten}\PY{p}{)}\PY{p}{)}\PY{p}{:}
               \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
           
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -413,8 +428,10 @@ Minimum cost to reach 4,8 = 29.38051878887093
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yticks}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
           \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{path\PYZus{}foureight}\PY{p}{)}\PY{p}{)}\PY{p}{:}
               \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{cmap}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{cmap}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}
@@ -448,27 +465,33 @@ have previously calculated
 I have marked in comments the change from previous code
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}208}]:} \PY{c+c1}{\PYZsh{} This is the main function that calculates the minimum cost as well as the optimal path to reach given x,y}
+{\color{incolor}In [{\color{incolor}208}]:} \PY{c+c1}{\PYZsh{} This is the main function that calculates the }
+          \PY{c+c1}{\PYZsh{}minimum cost as well as the optimal path to reach given x,y}
           
           \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
           \PY{c+c1}{\PYZsh{}\PYZsh{} Create a global storage \PYZsh{}\PYZsh{}}
           \PY{c+c1}{\PYZsh{}\PYZsh{} and initialize all \PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
           \PY{c+c1}{\PYZsh{}\PYZsh{} values to \PYZhy{}1 \PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
           \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
-          \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers} \PY{o}{=} \PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]}
+          \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers} \PY{o}{=} \PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]} 
+                                          \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]}
           
           \PY{k}{def} \PY{n+nf}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
-              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial and takes 0 fuel and optimal path is [[0,0]]}
+              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial }
+              \PY{c+c1}{\PYZsh{} and takes 0 fuel and optimal path is [[0,0]]}
               \PY{c+c1}{\PYZsh{} Just do not drive}
               \PY{k}{if} \PY{p}{(}\PY{n}{x}\PY{o}{==}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
                   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{,} \PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}
               \PY{k}{else}\PY{p}{:}
                   \PY{c+c1}{\PYZsh{} But if both not 0...we have following cases}
                   \PY{k}{if} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
-                      \PY{c+c1}{\PYZsh{} If both greater than 0, what are the points, from which a person can reach x,y?}
-                      \PY{c+c1}{\PYZsh{} Ans \PYZhy{} since person can move only up or right, only points that can reach x,y are}
+                      \PY{c+c1}{\PYZsh{} If both greater than 0, what are the points, from }
+                      \PY{c+c1}{\PYZsh{} which a person can reach x,y?}
+                      \PY{c+c1}{\PYZsh{} Ans \PYZhy{} since person can move only up or right, }
+                      \PY{c+c1}{\PYZsh{} only points that can reach x,y are}
                       \PY{c+c1}{\PYZsh{} (x\PYZhy{}1,y) and (x,y\PYZhy{}1)}
-                      \PY{c+c1}{\PYZsh{} so we first calculate cost of approaching left point (x\PYZhy{}1,y)}
+                      \PY{c+c1}{\PYZsh{} so we first calculate cost of approaching }
+                      \PY{c+c1}{\PYZsh{} left point (x\PYZhy{}1,y)}
                       
                       \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
                       \PY{c+c1}{\PYZsh{}\PYZsh{} Check if answer \PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
@@ -479,7 +502,8 @@ I have marked in comments the change from previous code
                       \PY{k}{if} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{o}{==}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
                           \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{y}\PY{p}{)}
                       \PY{n}{cost\PYZus{}from\PYZus{}left} \PY{o}{=} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}
-                      \PY{c+c1}{\PYZsh{} Then we calculate cost of approaching bottom point (x,y\PYZhy{}1)}
+                      \PY{c+c1}{\PYZsh{} Then we calculate cost of approaching }
+                      \PY{c+c1}{\PYZsh{} bottom point (x,y\PYZhy{}1)}
                       
                       \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
                       \PY{c+c1}{\PYZsh{}\PYZsh{} Check if answer \PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
@@ -490,11 +514,15 @@ I have marked in comments the change from previous code
                       \PY{k}{if} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{==}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
                           \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
                       \PY{n}{cost\PYZus{}from\PYZus{}below} \PY{o}{=} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
-                      \PY{c+c1}{\PYZsh{} cost1 = cost of approaching left point (x\PYZhy{}1,y) + cost of going from (x\PYZhy{}1,y) to (x,y)}
-                      \PY{c+c1}{\PYZsh{} cost2 = cost of approaching bottom point (x,y\PYZhy{}1) + cost of going from (x,y\PYZhy{}1) to (x,y)}
-                      \PY{c+c1}{\PYZsh{} return the minimum cost1 and cost2 as cost to approach (x,y)}
+                      \PY{c+c1}{\PYZsh{} cost1 = cost of approaching left point (x\PYZhy{}1,y) + }
+                      \PY{c+c1}{\PYZsh{} cost of going from (x\PYZhy{}1,y) to (x,y)}
+                      \PY{c+c1}{\PYZsh{} cost2 = cost of approaching bottom point (x,y\PYZhy{}1) + }
+                      \PY{c+c1}{\PYZsh{} cost of going from (x,y\PYZhy{}1) to (x,y)}
+                      \PY{c+c1}{\PYZsh{} return the minimum cost1 and cost2 as cost }
+                      \PY{c+c1}{\PYZsh{} to approach (x,y)}
                       
-                      \PY{c+c1}{\PYZsh{} cost of approaching left point (x\PYZhy{}1,y) is calculated by }
+                      \PY{c+c1}{\PYZsh{} cost of approaching left point (x\PYZhy{}1,y) is }
+                      \PY{c+c1}{\PYZsh{} calculated by }
                       \PY{c+c1}{\PYZsh{} recursively calling minimum\PYZus{}cost\PYZus{}path(x\PYZhy{}1,y)}
                       
                       \PY{k}{if} \PY{n}{cost\PYZus{}from\PYZus{}below}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{+}\PY{n}{cost}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{\PYZlt{}}\PY{n}{cost\PYZus{}from\PYZus{}left}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{+}\PY{n}{cost}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
@@ -535,13 +563,15 @@ I have marked in comments the change from previous code
           \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{path\PYZus{}tenten}\PY{p}{:}
               \PY{n}{path\PYZus{}string} \PY{o}{+}\PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{, }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)\PYZhy{}\PYZhy{}\PYZgt{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{n}{path\PYZus{}string}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{]}
-          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 10,10 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost}\PY{p}{,} \PY{n}{cost\PYZus{}tenten}\PY{p}{)}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 10,10 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}
+                \PY{n+nb}{format}\PY{p}{(}\PY{n}{cost}\PY{p}{,} \PY{n}{cost\PYZus{}tenten}\PY{p}{)}\PY{p}{)}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
           \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{path\PYZus{}foureight}\PY{p}{:}
               \PY{n}{path\PYZus{}string} \PY{o}{+}\PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{, }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)\PYZhy{}\PYZhy{}\PYZgt{}}\PY{l+s+s2}{\PYZdq{}}
           \PY{n}{path\PYZus{}string} \PY{o}{=} \PY{n}{path\PYZus{}string}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{]}
-          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 4,8 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{cost}\PY{p}{,} \PY{n}{cost\PYZus{}foureight}\PY{p}{)}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Minimum cost to reach 4,8 = }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Optimal Path \PYZhy{} }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}
+                \PY{n+nb}{format}\PY{p}{(}\PY{n}{cost}\PY{p}{,} \PY{n}{cost\PYZus{}foureight}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -560,7 +590,8 @@ calculated faster than before
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}209}]:} \PY{c+c1}{\PYZsh{} Lets visualize it via plots}
-          \PY{c+c1}{\PYZsh{} You can ignore the code and focus on plot and get an intuitive feel}
+          \PY{c+c1}{\PYZsh{} You can ignore the code and focus on plot and }
+          \PY{c+c1}{\PYZsh{} get an intuitive feel}
           
           \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -568,8 +599,10 @@ calculated faster than before
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yticks}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
           \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{path\PYZus{}tenten}\PY{p}{)}\PY{p}{)}\PY{p}{:}
               \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}tenten}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
           
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -577,8 +610,10 @@ calculated faster than before
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yticks}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
           \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{path\PYZus{}foureight}\PY{p}{)}\PY{p}{)}\PY{p}{:}
               \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
-                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{path\PYZus{}foureight}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} 
+                          \PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{ec}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{length\PYZus{}includes\PYZus{}head}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{cmap}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}
           \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{o}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{cmap}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}
@@ -614,7 +649,8 @@ I have marked places where you need to add corresponding code with bold
 comments. Try doing it!
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}218}]:} \PY{c+c1}{\PYZsh{} This is the main function that calculates the minimum cost as well as the optimal path to reach given x,y}
+{\color{incolor}In [{\color{incolor}218}]:} \PY{c+c1}{\PYZsh{} This is the main function that calculates the minimum }
+          \PY{c+c1}{\PYZsh{} cost as well as the optimal path to reach given x,y}
           
           \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}}
           \PY{c+c1}{\PYZsh{}\PYZsh{} Create a global storage \PYZsh{}\PYZsh{}}
@@ -624,7 +660,8 @@ comments. Try doing it!
           \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers} \PY{o}{=} \PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]}
           
           \PY{k}{def} \PY{n+nf}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{top\PYZus{}corner}\PY{p}{)}\PY{p}{:}
-              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial and takes 0 fuel and optimal path is [[0,0]]}
+              \PY{c+c1}{\PYZsh{} If x=0 and y=0, reaching this point is trivial }
+              \PY{c+c1}{\PYZsh{} and takes 0 fuel and optimal path is [[0,0]]}
               \PY{c+c1}{\PYZsh{} Just do not drive}
               \PY{k}{if} \PY{p}{(}\PY{n}{x}\PY{o}{==}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
                   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{,} \PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}
@@ -632,7 +669,8 @@ comments. Try doing it!
                   \PY{c+c1}{\PYZsh{} But if both not 0...we have following cases}
                   \PY{k}{if} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{y}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
                       \PY{k}{if} \PY{n}{x}\PY{o}{==}\PY{n}{top\PYZus{}corner}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o+ow}{and} \PY{n}{y}\PY{o}{\PYZlt{}}\PY{n}{top\PYZus{}corner}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}
-                          \PY{c+c1}{\PYZsh{} There are 3 ways to approach. This one is already wirtten for you}
+                          \PY{c+c1}{\PYZsh{} There are 3 ways to approach. }
+                          \PY{c+c1}{\PYZsh{} This one is already wirtten for you}
                           \PY{k}{if} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{o}{==}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
                               \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{top\PYZus{}corner}\PY{p}{)}
                           \PY{n}{cost\PYZus{}from\PYZus{}left} \PY{o}{=} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{p}{]} \PY{o}{+} \PY{n}{cost}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{y}\PY{p}{)}
@@ -705,7 +743,8 @@ comments. Try doing it!
                               \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{minimum\PYZus{}cost\PYZus{}path}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{top\PYZus{}corner}\PY{p}{)}
                           \PY{n}{cost\PYZus{}from\PYZus{}bottom} \PY{o}{=} \PY{n}{storage\PYZus{}for\PYZus{}computed\PYZus{}answers}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{[}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{cost}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
                           
-                          \PY{n}{list\PYZus{}of\PYZus{}cost\PYZus{}and\PYZus{}paths} \PY{o}{=} \PY{p}{[}\PY{n}{cost\PYZus{}from\PYZus{}left}\PY{p}{,} \PY{n}{cost\PYZus{}from\PYZus{}right}\PY{p}{,} \PY{n}{cost\PYZus{}from\PYZus{}top}\PY{p}{,} \PY{n}{cost\PYZus{}from\PYZus{}bottom}\PY{p}{]}
+                          \PY{n}{list\PYZus{}of\PYZus{}cost\PYZus{}and\PYZus{}paths} \PY{o}{=} \PY{p}{[}\PY{n}{cost\PYZus{}from\PYZus{}left}\PY{p}{,} \PY{n}{cost\PYZus{}from\PYZus{}right}\PY{p}{,} 
+                                                    \PY{n}{cost\PYZus{}from\PYZus{}top}\PY{p}{,} \PY{n}{cost\PYZus{}from\PYZus{}bottom}\PY{p}{]}
                           \PY{n}{list\PYZus{}of\PYZus{}costs} \PY{o}{=} \PY{p}{[}\PY{n}{e}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{e} \PY{o+ow}{in} \PY{n}{list\PYZus{}of\PYZus{}cost\PYZus{}and\PYZus{}paths}\PY{p}{]}
                           \PY{n}{idx} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{n}{list\PYZus{}of\PYZus{}costs}\PY{p}{)}
                           
